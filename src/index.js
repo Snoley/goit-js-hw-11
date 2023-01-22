@@ -64,24 +64,22 @@ function takeImg(images) {
   const markup = images
     .map(image => {
       return `<div class="photo-items">
-
-       <a href=""><img class="photo" src="${image.webformatURL}"/></a>
-
-        <div>
-           <p>
-    <b>Likes:</b> <span > ${image.likes} </span>
-</p>
-            <p>
-                <b>Views:</b> <span >${image.views}</span>  
-            </p>
-            <p>
-                <b>Comments:</b> <span >${image.comments}</span>  
-            </p>
-            <p>
-                <b>Downloads:</b> <span >${image.downloads}</span> 
-            </p>
-        </div>
-    </div>`;
+                <a href=""><img class="photo" src="${image.webformatURL}"/></a>
+              <div class="info">
+              <p class="info-item">
+                <b>Likes</b><span >${image.downloads}</span> 
+              </p>
+              <p class="info-item">
+                <b>Views</b><span >${image.views}</span>
+              </p>
+              <p class="info-item">
+                <b>Comments</b><span >${image.comments}</span> 
+              </p>
+              <p class="info-item">
+                <b>Downloads</b><span >${image.downloads}</span> 
+              </p>
+            </div>
+          </div>`;
     })
     .join('');
   gallery.innerHTML += markup;
